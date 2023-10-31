@@ -1,0 +1,23 @@
+---
+import { getAllPosts } from "../lib/cosmic"
+import Card from "../components/Card.astro";
+const data = await getAllPosts()
+import NavDark from "../components/NavDark.astro";
+---
+
+
+<section>
+    <ul class="grid md:grid-cols-2 gap-8">
+      {
+        data.map((post) => (
+          <Card
+            title={post.title}
+            href={post.slug}
+            body={post.metadata.excerpt}
+          />
+        ))
+      }
+    </ul>
+  </section>
+
+  <NavDark />
