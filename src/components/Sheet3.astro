@@ -1,0 +1,126 @@
+
+<section>
+	<div class="wrapper-block">
+		<div class="left-content">
+
+			<img
+			src="https://res.cloudinary.com/practicaldev/image/fetch/s--stIQpETg--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/snrq7l81sqq76avnnpnk.jpeg"
+			alt=""
+		/>
+			
+		</div>
+		<div class="right-content">
+			<h3>Voor en nadelen</h3>
+			<ul>
+				<li>Astro Islands</li>
+				<li>Zero JS</li>
+				<li>Compiler</li>
+				<li>Component-Driven</li>
+				<li class="no"></li>
+				<li>Snelheid</li>
+				<li>Documentatie</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+        position: sticky;
+        top: 2em;
+		padding: 2em;
+		height: 95vh;
+		width: 100%;
+		overflow: hidden;
+		color: var(--main-offwhite);
+	}
+
+	.no {
+		list-style-type: none;
+		padding: .5em 0;
+	}
+
+	.wrapper-block {
+		height: 100%;
+		width: 100%;
+		background-color: #e75f23;
+		display: flex;
+		border-radius: 1em;
+        padding: 2em;
+	}
+
+	.left-content {
+        width: 100%;
+	}
+
+	.right-content {
+		height: 100%;
+		width: 100%;
+		padding-left: 2em;
+	}
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 1em;
+	}
+
+	h3 {
+		font-size: 5em;
+		font-weight: 600;
+        max-width: 90%;
+        line-height: 1em;
+        margin-bottom: 1.2rem;
+	}
+
+	p {
+		max-width: 75%;
+	}
+
+	ul {
+		font-size: 2em;
+		margin-left: 1em;
+	}
+
+	@media screen and (max-width: 1122px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+h3 {
+	font-size: 2.5em;
+}
+
+p {
+	max-width: 100%;
+	padding-bottom: 1em;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 1em;
+}
+
+
+.wrapper-block {
+	flex-direction: column;
+	padding: 1em;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.left-content {
+	height: 35%;
+}
+
+.right-content {
+        padding-left: 0em;
+		padding-top: 1em;
+	}
+
+}
+</style>

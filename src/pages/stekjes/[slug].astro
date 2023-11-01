@@ -1,0 +1,39 @@
+---
+import { getAllPosts } from '../../lib/cosmic'
+import { Image } from 'astro:assets'
+
+export async function getStaticPaths() {
+  const data = (await getAllPosts()) || []
+
+  return data.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post }
+    }
+  })
+}
+
+const { post } = Astro.props
+---
+
+<article class="mx-auto max-w-screen-md pt-20">
+  <section class="border-b pb-8">
+    <h1 class="text-4xl font-bold">{post.title}</h1>
+    <div class="my-4"></div>
+    <span class="text-sm font-semibold">{post.metadata.author?.title}</span>
+  </section>
+  {
+    post.metadata.cover_image && (
+      <Image
+        src={post.metadata.cover_image.imgix_url}
+        format="webp"
+        width={1200}
+        height={675}
+        quality={50}
+        alt={`Cover image for the blog ${post.title}`}
+        class={'my-12 rounded-md shadow-lg'}
+      />
+    )
+  }
+  <div set:html={post.metadata.content} />
+</article>

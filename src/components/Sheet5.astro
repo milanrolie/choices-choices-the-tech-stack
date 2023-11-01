@@ -1,0 +1,122 @@
+
+<section>
+	<div class="wrapper-block">
+		<div class="left-content">
+
+			<img
+			src="https://images.unsplash.com/photo-1602191375046-3e503ccd4e57?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+			alt=""
+		/>
+			
+		</div>
+		<div class="right-content">
+			<h3>Samenvatting</h3>
+			<ul>
+				<li>Fijn werken</li>
+				<li>Lijkt op SvelteKit</li>
+				<li>Weinig te vinden</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+        position: sticky;
+        top: 4em;
+		padding: 2em;
+		height: 93vh;
+		width: 100%;
+		overflow: hidden;
+		color: var(--main-offwhite);
+	}
+
+	.no {
+		list-style-type: none;
+		padding: .5em 0;
+	}
+
+	.wrapper-block {
+		height: 100%;
+		width: 100%;
+		background-color: #f4ac42;
+		display: flex;
+		border-radius: 1em;
+        padding: 2em;
+	}
+
+	.left-content {
+        width: 100%;
+	}
+
+	.right-content {
+		height: 100%;
+		width: 100%;
+		padding-left: 2em;
+	}
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 1em;
+	}
+
+	h3 {
+		font-size: 5em;
+		font-weight: 600;
+        max-width: 90%;
+        line-height: 1em;
+        margin-bottom: 1.2rem;
+	}
+
+	p {
+		max-width: 75%;
+	}
+
+	ul {
+		font-size: 2em;
+		margin-left: 1em;
+	}
+
+	@media screen and (max-width: 1122px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+h3 {
+	font-size: 2.5em;
+}
+
+p {
+	max-width: 100%;
+	padding-bottom: 1em;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 1em;
+}
+
+
+.wrapper-block {
+	flex-direction: column;
+	padding: 1em;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.left-content {
+	height: 35%;
+}
+
+.right-content {
+        padding-left: 0em;
+		padding-top: 1em;
+	}
+
+}
+</style>

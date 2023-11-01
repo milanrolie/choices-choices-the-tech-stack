@@ -1,23 +1,52 @@
 ---
-import { getAllPosts } from "../lib/cosmic"
-import Card from "../components/Card.astro";
-const data = await getAllPosts()
 import NavDark from "../components/NavDark.astro";
+import Layout from "../layouts/Layout.astro";
+
+import Card from "../components/Card.astro";
+import { getAllPosts } from "../lib/cosmic";
+
+const data = await getAllPosts();
 ---
 
+<Layout title="Stekjes">
+  <NavDark />
 
-<section>
-    <ul class="grid md:grid-cols-2 gap-8">
+  <section>
+    <h1>Alle stekjes</h1>
+    <p>
+      Heb jij een of meerdere plantenstekjes over en zou je die graag willen
+      ruilen voor een nieuwe plantje? Bekijk hieronder ons aanbod.
+    </p>
+
+    <div class="card-wrapper">
       {
         data.map((post) => (
           <Card
             title={post.title}
             href={post.slug}
             body={post.metadata.excerpt}
+            url={post.metadata.afbeelding.url}
+            beschrijving={post.metadata.beschrijving}
           />
         ))
       }
-    </ul>
+    </div>
   </section>
+</Layout>
 
-  <NavDark />
+<style>
+  section {
+    height: 100vh;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .card-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+  }
+
+
+</style>

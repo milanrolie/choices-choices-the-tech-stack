@@ -1,0 +1,284 @@
+
+<script>
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.to(".wrapper-block", {
+      scrollTrigger: {
+        trigger: ".wrapper-block",
+        scrub: 1,
+        start: "top",
+        end: "bottom",
+		markers: true,
+      },
+      y: 300,
+      opacity: 0.5,
+    });
+
+	// gsap.to(".wrapper-block", {
+    //   y: "-120%",
+    //   delay: 2,
+    //   stagger: 0.1,
+    //   duration: 1,
+    //   ease: "Power3.easeInOut",
+    // });
+</script>
+
+<section>
+
+	
+  <div class="wrapper-block">
+	  <div class="background">
+		  <span class="header"></span>
+		  <div class="sun"></div>
+		  <div class="planet_1-orbit">
+			  <div class="planet_1"></div>
+			</div>
+			<div class="planet_2-orbit">
+				<div class="planet_2">
+					<div class="planet_dec-2"></div>
+					<div class="moon_2-orbit">
+						<div class="moon_2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="planet_3-orbit">
+				<div class="planet_3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<h3>Astro & CosmicJS</h3>
+</section>
+
+<style>
+  section {
+    position: sticky;
+    top: 0;
+    padding: 2em;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: var(--main-offwhite);
+    color: rgb(255, 217, 184);
+  }
+
+  .wrapper-block {
+	position: absolute;
+	left: 0;
+	top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(73, 27, 2);
+    display: flex;
+    border-radius: 1em;
+  }
+
+  .left-content {
+    width: 100%;
+  }
+
+  .right-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.9em;
+  }
+
+  h3 {
+    position: absolute;
+    font-size: 10em;
+    font-weight: 700;
+    max-width: 90%;
+    line-height: 1em;
+    margin-bottom: 1.2rem;
+    position: absolute;
+    left: 3rem;
+	bottom: 3rem;
+    text-align: left;
+	color: #efefef;
+  }
+
+  p {
+    max-width: 75%;
+  }
+
+  div.background{
+  background-image: radial-gradient(#242424, black);
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.txt{
+  transform: translate(20rem);
+  color: #343434;
+  font-size: 20rem;
+  font-family: Inconsolata;
+}
+
+span.header{
+  transform: translatey(-250px);  
+  color: white;
+  font-size: 35px;
+  font-family: Josefin Sans;
+}
+
+.planet_3-orbit,
+.planet_3,
+.planet_2-orbit,
+.planet_2,
+.planet_dec-2,
+.moon_2-orbit,
+.moon_2,
+.planet_1-orbit,
+.planet_1,
+.sun{
+  border-radius: 100%;
+  position: absolute;
+}
+
+.sun{
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 0px 150px 25px orange, 0px 0px 50px 5px orange;
+  background: linear-gradient(to right, orange, orange);
+}
+
+.planet_1-orbit{
+  opacity: 75%;
+  border: 1px solid lightgrey;
+  animation: orbit 3.3s linear infinite;
+  width: 145px;
+  height: 145px;
+}
+
+.planet_1{
+  width: 25px;
+  height: 25px;
+  box-shadow: 0px 0px 25px 10px rgb(255, 255, 255, 0.2);
+  transform: translate(100px);
+  background: linear-gradient(to top, palegoldenrod, #ffb357);
+}
+
+.planet_2-orbit{
+  opacity: 75%;
+  border: 1px solid lightgrey;
+  animation: orbit 4.8s linear infinite;
+  width: 275px;
+  height: 275px;
+}
+
+.planet_2{
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 0px 25px 10px rgb(5, 219, 247, 0.2);
+  transform: translate(190px);
+  background: linear-gradient(to top, #a0e0f2, #248aa6);
+}
+
+.moon_2-orbit{
+/*  border: 1px solid lightgrey; */
+  animation: orbit 10s linear infinite;
+  width: 75px;
+  height: 75px;
+}
+
+.moon_2{
+  width: 12px;
+  height: 12px;
+  box-shadow: 0px 0px 5px 2px rgb(255, 255, 255, 0.2);
+  transform: translate(40px);
+  background: linear-gradient(to top, grey, darkgrey);
+}
+
+/*.planet_dec-2{
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  transform: translate(5px);
+  background: lightblue;
+} */
+
+.planet_3-orbit{
+  opacity: 75%;
+  border: 1px solid lightgrey;
+  animation: orbit 6.2s linear infinite;
+  width: 400px;
+  height: 400px;
+}
+
+.planet_3{
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0px 0px 25px 10px rgb(255, 255, 255, 0.2);
+  transform: translate(260px);
+  background: linear-gradient(to top, #95f090, #25a81e);
+  font-size: 1rem;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  @media screen and (max-width: 1122px) {
+  }
+
+  @media screen and (max-width: 700px) {
+    h3 {
+      font-size: 2.5em;
+    }
+
+    p {
+      max-width: 100%;
+      padding-bottom: 1em;
+    }
+
+    img {
+      height: 60%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 1em;
+    }
+
+    .wrapper-block {
+      flex-direction: column;
+      padding: 1em;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+</style>
